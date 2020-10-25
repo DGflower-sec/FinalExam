@@ -15,12 +15,14 @@ public class BookDBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE Book(_id INTEGER PRIMARY KEY AUTOINCREMENT )");
+        db.execSQL("CREATE TABLE book(_id INTEGER PRIMARY KEY AUTOINCREMENT,name VARCHAR(20),container VARCHAR,picture VARCHR)");
 
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
+        db.execSQL("drop table if exists book");
+        onCreate(db);
     }
 }
