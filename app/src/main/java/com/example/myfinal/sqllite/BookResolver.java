@@ -4,7 +4,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.net.Uri;
 
-import com.example.myfinal.dao.BookDao;
+import com.example.myfinal.vo.Book;
 
 import java.util.List;
 
@@ -20,10 +20,10 @@ public class BookResolver {
         this.uri = Uri.parse(INFO_URI);
         this.resolver = context.getContentResolver();
     }
-    public int insert(){}
-    public List<BookDao> queryAll(){}
-    public boolean update(){}
-    public boolean search(){}
+//    public int insert(){}
+//    public List<Book> queryAll(){}
+//    public boolean update(){}
+//    public boolean search(){}
 
 
 

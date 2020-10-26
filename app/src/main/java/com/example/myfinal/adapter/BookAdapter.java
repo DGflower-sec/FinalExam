@@ -11,17 +11,17 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myfinal.R;
-import com.example.myfinal.dao.BookDao;
+import com.example.myfinal.vo.Book;
 
 import java.util.ArrayList;
 
 public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder> {
 
     private Context context;
-    private ArrayList<BookDao> booksEntities;
+    private ArrayList<Book> booksEntities;
     private View inflater;
 
-    public BookAdapter(Context context, ArrayList<BookDao> booksEntities) {
+    public BookAdapter(Context context, ArrayList<Book> booksEntities) {
         this.context = context;
         this.booksEntities = booksEntities;
     }
@@ -36,7 +36,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
 
     public void onBindViewHolder(@NonNull BookAdapter.BookViewHolder holder, int position) {
 
-        BookDao data = booksEntities.get(position);
+        Book data = booksEntities.get(position);
         holder.tv_title.setText(data.name);
         holder.tv_container.setText(data.container);
 
@@ -77,7 +77,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
          * @param view 点击的item的视图
          * @param data 点击的item的数据
          */
-        public void OnItemClick(View view,BookDao data);
+        public void OnItemClick(View view, Book data);
     }
 
     private BookAdapter.OnItemClickListener onItemClickListener;

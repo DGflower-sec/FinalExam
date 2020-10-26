@@ -4,7 +4,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.net.Uri;
 
-import com.example.myfinal.dao.UserDao;
+import com.example.myfinal.vo.User;
 
 import java.util.List;
 
@@ -20,15 +20,15 @@ public class UserResolver {
         this.resolver = context.getContentResolver();
     }
 
-    public int insert() {
-    }
-
-    public List<UserDao> queryAll() {
-    }
-
-    public boolean update() {
-    }
-
-    public boolean search() {
-    }
+//    public int insert() {
+//    }
+//
+//    public List<User> queryAll() {
+//    }
+//
+//    public boolean update() {
+//    }
+//
+//    public boolean search() {
+//    }
 }

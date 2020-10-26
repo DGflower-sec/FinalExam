@@ -12,14 +12,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myfinal.adapter.BookAdapter;
-import com.example.myfinal.dao.BookDao;
+import com.example.myfinal.vo.Book;
 
 import java.util.ArrayList;
 
 public class FR_Book extends Fragment {
     private View view;
     private RecyclerView brecyclerView;
-    private ArrayList<BookDao> bookDaoList = new ArrayList<BookDao>();
+    private ArrayList<Book> bookList = new ArrayList<Book>();
     private BookAdapter bookAdapter;
 
 
@@ -36,22 +36,22 @@ public class FR_Book extends Fragment {
 
     private void initData() {
         for (int i = 0; i < 10; i++) {
-            BookDao bookDao = new BookDao();
-            bookDao.setName("测试" + i);
-            bookDao.setContainer("100" + i);
-            bookDaoList.add(bookDao);
+            Book book = new Book();
+            book.setName("测试" + i);
+            book.setContainer("100" + i);
+            bookList.add(book);
         }
     }
 
     private void initRecycle() {
         brecyclerView = (RecyclerView) view.findViewById(R.id.book_re);
-        bookAdapter = new BookAdapter(getActivity(), bookDaoList);
+        bookAdapter = new BookAdapter(getActivity(), bookList);
         brecyclerView.setAdapter(bookAdapter);
         brecyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));
         brecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL));
         bookAdapter.setOnItemClickListener(new BookAdapter.OnItemClickListener() {
             @Override
-            public void OnItemClick(View view, BookDao data) {
+            public void OnItemClick(View view, Book data) {
                 Toast.makeText(getActivity(), "1", Toast.LENGTH_LONG).show();
             }
         });
