@@ -8,6 +8,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.myfinal.fragment.FR_Book;
+import com.example.myfinal.fragment.FR_Home;
+import com.example.myfinal.fragment.FR_My;
+import com.example.myfinal.fragment.FR_Tuijian;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,10 +32,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        fr_home = new com.example.myfinal.FR_Home();
-        fr_my = new com.example.myfinal.FR_My();
-        fr_book = new com.example.myfinal.FR_Book();
-        fr_tuijian = new com.example.myfinal.FR_Tuijian();
+        fr_home = new FR_Home();
+        fr_my = new FR_My();
+        fr_book = new FR_Book();
+        fr_tuijian = new FR_Tuijian();
         fragments = new Fragment[]{fr_home, fr_my, fr_book,fr_tuijian};
         lastfragment = 0;
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_fragment, fr_home).show(fr_home).commit();

@@ -1,4 +1,4 @@
-package com.example.myfinal;
+package com.example.myfinal.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myfinal.R;
 import com.example.myfinal.adapter.BookAdapter;
 import com.example.myfinal.vo.Book;
 

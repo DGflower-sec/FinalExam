@@ -1,4 +1,4 @@
-package com.example.myfinal;
+package com.example.myfinal.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -7,11 +7,9 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link com.example.finnalexam.FR_Tuijian#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.example.myfinal.R;
+
+
 public class FR_Tuijian extends Fragment {
 
     @Override

@@ -1,4 +1,4 @@
-package com.example.myfinal;
+package com.example.myfinal.activity;
 
 
 import android.content.Intent;
@@ -8,6 +8,9 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.myfinal.MainActivity;
+import com.example.myfinal.R;
+
 
 public class login extends AppCompatActivity {
 
@@ -15,6 +18,7 @@ public class login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        init();
     }
 
     private void init(){
@@ -26,7 +30,7 @@ public class login extends AppCompatActivity {
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(com.example.myfinal.login.this,MainActivity.class);
+                Intent intent = new Intent(login.this, MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -34,8 +38,9 @@ public class login extends AppCompatActivity {
         btn_signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(com.example.myfinal.login.this,signup.class);
+                Intent intent = new Intent(login.this,signup.class);
                 startActivity(intent);
+
             }
         });
     }
