@@ -19,6 +19,8 @@ public class signup extends AppCompatActivity implements View.OnClickListener{
 
     private String username;
     private String password;
+    private EditText editText_name;
+    private EditText editText_pass;
     private Context context;
 
     @Override
@@ -30,8 +32,12 @@ public class signup extends AppCompatActivity implements View.OnClickListener{
 
     public void init(){
 
-        username = findViewById(R.id.si_username).toString().trim();
-        password = findViewById(R.id.si_password).toString().trim();
+        editText_name = findViewById(R.id.si_username);
+        editText_pass = findViewById(R.id.si_password);
+        username = editText_name.getText().toString();
+        password = editText_pass.getText().toString();
+
+
         User user = new User(username,password);
         Button btn_signup = findViewById(R.id.btn_signup_cf);
         btn_signup.setOnClickListener(new View.OnClickListener() {
@@ -39,8 +45,8 @@ public class signup extends AppCompatActivity implements View.OnClickListener{
             public void onClick(View v) {
                 switch (v.getId()){
                     case R.id.btn_signup_cf:
-                      UserDao userDao = new UserDao(context);
-                      userDao.register(user);
+                       UserDao userDao = new UserDao(context);
+                       userDao.register(user);
                         break;
 
                 }

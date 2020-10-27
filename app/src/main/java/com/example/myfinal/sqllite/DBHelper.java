@@ -9,13 +9,15 @@ import androidx.annotation.Nullable;
 import com.example.myfinal.dao.UserDao;
 
 public class DBHelper extends SQLiteOpenHelper {
+
     @Override
     public void onOpen(SQLiteDatabase db) {
         super.onOpen(db);
     }
 
     public DBHelper(@Nullable Context context) {
-        super(context, "finnalexam", null, 1);
+
+        super(context, "finnalexam.db", null, 1);
     }
 
     @Override
