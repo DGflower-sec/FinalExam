@@ -17,11 +17,8 @@ import com.example.myfinal.vo.User;
 
 public class signup extends AppCompatActivity implements View.OnClickListener{
 
-    private String username;
-    private String password;
     private EditText editText_name;
     private EditText editText_pass;
-    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,18 +31,16 @@ public class signup extends AppCompatActivity implements View.OnClickListener{
 
         editText_name = findViewById(R.id.si_username);
         editText_pass = findViewById(R.id.si_password);
-        username = editText_name.getText().toString();
-        password = editText_pass.getText().toString();
-
-
-        User user = new User(username,password);
+        User user = new User();
+        user.setUsername(editText_name.getText().toString().trim());
+        user.setPassword(editText_pass.getText().toString().trim());
         Button btn_signup = findViewById(R.id.btn_signup_cf);
         btn_signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 switch (v.getId()){
                     case R.id.btn_signup_cf:
-                       UserDao userDao = new UserDao(context);
+                       UserDao userDao = new UserDao(signup.this);
                        userDao.register(user);
                         break;
 
