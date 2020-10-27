@@ -25,22 +25,22 @@ public class signup extends AppCompatActivity implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+        init();
     }
 
     public void init(){
 
         username = findViewById(R.id.si_username).toString().trim();
         password = findViewById(R.id.si_password).toString().trim();
+        User user = new User(username,password);
         Button btn_signup = findViewById(R.id.btn_signup_cf);
-
         btn_signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 switch (v.getId()){
                     case R.id.btn_signup_cf:
-                        UserDao userDao = new UserDao(context);
-                        User user = new User(username,password);
-                        userDao.register(user);
+                      UserDao userDao = new UserDao(context);
+                      userDao.register(user);
                         break;
 
                 }

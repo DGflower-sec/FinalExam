@@ -1,6 +1,8 @@
 package com.example.myfinal.vo;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
 
     private int id;
     private String username;//这个是邮箱

@@ -20,6 +20,8 @@ public class UserDao {
         ContentValues contentValues = new ContentValues();
         contentValues.put("username",user.getUsername());
         contentValues.put("password",user.getPassword());
+        db.insert("user",null,contentValues);
+        db.close();
         return db.insert("user",null,contentValues)>0;
     }
 

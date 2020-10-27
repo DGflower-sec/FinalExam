@@ -9,7 +9,10 @@ import androidx.annotation.Nullable;
 import com.example.myfinal.dao.UserDao;
 
 public class DBHelper extends SQLiteOpenHelper {
-
+    @Override
+    public void onOpen(SQLiteDatabase db) {
+        super.onOpen(db);
+    }
 
     public DBHelper(@Nullable Context context) {
         super(context, "finnalexam", null, 1);
@@ -27,5 +30,10 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
+    }
+
+    @Override
+    public synchronized void close() {
+        super.close();
     }
 }
