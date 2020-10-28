@@ -22,7 +22,7 @@ public class login extends AppCompatActivity {
     private EditText et_lgpassword;
     private String username;
     private String password;
-
+    public  String userName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +50,9 @@ public class login extends AppCompatActivity {
                 if (userDao.login(user)) {
                     Toast.makeText(login.this,"登陆成功",Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(login.this, MainActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("username",username);
+                    intent.putExtras(bundle);
                     startActivity(intent);
                 }
             }

@@ -1,6 +1,7 @@
 package com.example.myfinal;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
@@ -32,15 +33,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
+
         fr_home = new FR_Home();
         fr_my = new FR_My();
         fr_book = new FR_Book();
         fr_tuijian = new FR_Tuijian();
+
+        Bundle bundle2 = this.getIntent().getExtras();
+        String s = bundle2.getString("username");
+        Log.i("",s);
+        Bundle bundle = new Bundle();
+        bundle.putString("username",s);
+        fr_my.setArguments(bundle);
         fragments = new Fragment[]{fr_home, fr_my, fr_book,fr_tuijian};
         lastfragment = 0;
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_fragment, fr_home).show(fr_home).commit();
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(changeFrament);
+
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener changeFrament = new BottomNavigationView.OnNavigationItemSelectedListener() {

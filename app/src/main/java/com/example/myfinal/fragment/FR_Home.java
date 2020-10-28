@@ -29,7 +29,7 @@ public class FR_Home extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        view = inflater.inflate(R.layout.fragment_my, container, false);
+        view = inflater.inflate(R.layout.fragment_home, container, false);
         initData();
         initRecycle();
         return view;
@@ -37,6 +37,8 @@ public class FR_Home extends Fragment {
     }
 
     private void initData() {
+        
+
         for (int i = 0; i < 10; i++) {
             Book book = new Book();
             book.setName("模拟书本" + i);
@@ -49,7 +51,7 @@ public class FR_Home extends Fragment {
     }
 
     private void initRecycle() {
-        brecyclerView = (RecyclerView) view.findViewById(R.id.book_re);
+        brecyclerView = (RecyclerView) view.findViewById(R.id.book_home);
         bookAdapter = new BookAdapter(getActivity(), bookList);
         brecyclerView.setAdapter(bookAdapter);
         brecyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false));

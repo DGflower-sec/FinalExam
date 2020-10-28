@@ -9,6 +9,7 @@
 
     <ImageView
         android:id="@+id/ivpic"
+        android:drawable="@mipmap/ic_launcher"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
