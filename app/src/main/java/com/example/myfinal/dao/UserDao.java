@@ -21,7 +21,9 @@ public class UserDao {
         contentValues.put("username",user.getUsername());
         contentValues.put("password",user.getPassword());
         db.insert("user",null,contentValues);
-        return db.insert("user",null,contentValues)>0;
+        int count = (int) db.insert("user",null,contentValues);
+        db.close();
+        return count > 0;
     }
 
     public boolean login(User user){

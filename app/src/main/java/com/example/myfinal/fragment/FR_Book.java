@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myfinal.R;
 import com.example.myfinal.adapter.BookAdapter;
+import com.example.myfinal.dao.BookDao;
 import com.example.myfinal.vo.Book;
 
 import java.util.ArrayList;
@@ -36,12 +37,15 @@ public class FR_Book extends Fragment {
     }
 
     private void initData() {
-        for (int i = 0; i < 10; i++) {
+        for(int i=0;i<10;i++){
             Book book = new Book();
-            book.setName("测试" + i);
-            book.setContainer("100" + i);
+            book.setName("模拟书本"+i);
+            book.setContainer("模拟内容"+i);
             bookList.add(book);
         }
+//        BookDao bookDao = new BookDao(this);
+//        bookDao.queryAll();
+
     }
 
     private void initRecycle() {
