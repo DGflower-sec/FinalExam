@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+import android.widget.ViewFlipper;
 
 import com.example.myfinal.R;
 import com.example.myfinal.adapter.BookAdapter;
@@ -19,6 +20,7 @@ import com.example.myfinal.vo.Book;
 import java.util.ArrayList;
 
 public class FR_Home extends Fragment {
+    private ViewFlipper viewFlipper;
     private View view;
     private RecyclerView brecyclerView;
     private ArrayList<Book> bookList = new ArrayList<Book>();
@@ -30,6 +32,8 @@ public class FR_Home extends Fragment {
                              Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_home, container, false);
+        viewFlipper = view.findViewById(R.id.vf_img);
+        viewFlipper.startFlipping();
         initData();
         initRecycle();
         return view;
@@ -37,7 +41,7 @@ public class FR_Home extends Fragment {
     }
 
     private void initData() {
-        
+
 
         for (int i = 0; i < 10; i++) {
             Book book = new Book();

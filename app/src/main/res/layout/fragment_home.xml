@@ -14,7 +14,18 @@
         <ViewFlipper
             android:id="@+id/vf_img"
             android:layout_width="match_parent"
-            android:layout_height="200dp"/>
+            android:layout_height="200dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/vf_1"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/vf_2"
+                />
+
+        </ViewFlipper>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="1dp"
