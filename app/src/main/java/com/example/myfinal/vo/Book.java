@@ -10,6 +10,9 @@ public class Book implements Serializable {
     public String name;
     public String container;
     public String picture;
+    public int price;
+
+
 
     public int getId() {
         return id;

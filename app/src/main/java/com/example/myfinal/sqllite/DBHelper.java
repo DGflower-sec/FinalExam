@@ -24,8 +24,9 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE user(id INTEGER PRIMARY KEY AUTOINCREMENT, username VARCHAR(20)," +
                 "password VARCHAR(20))");
+        db.execSQL("CREATE TABLE coonnnect(id INTEGER PRIMARY KEY AUTOINCREMENT,u_id int,b_id int)");
         db.execSQL("CREATE TABLE book(id INTEGER PRIMARY KEY AUTOINCREMENT, bookname VARCHAR(20), " +
-                " content VARCHAR)");
+                " content VARCHAR , price int)");
 
     }
 
