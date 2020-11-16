@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyFinal">
         <activity android:name=".MainActivity">
+
         </activity>
         <activity android:name=".activity.login">
             <intent-filter>

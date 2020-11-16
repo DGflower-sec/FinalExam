@@ -1,4 +1,4 @@
-package com.example.myfinal.activity;
+                           package com.example.myfinal.activity;
 
 
 import android.content.Intent;
@@ -47,6 +47,7 @@ public class login extends AppCompatActivity {
                 user.setUsername(username);
                 user.setPassword(password);
                 UserDao userDao = new UserDao(login.this);
+
                 if (userDao.login(user)) {
                     Toast.makeText(login.this,"登陆成功",Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(login.this, MainActivity.class);

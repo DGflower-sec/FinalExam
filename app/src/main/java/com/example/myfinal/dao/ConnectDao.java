@@ -18,13 +18,14 @@ public class ConnectDao {
     public ConnectDao(Context context) {
         this.helper = new DBHelper(context);
     }
-8
     //用于查看当前用户的购物车的功能
-    public Connect search() {
-        SQLiteDatabase db = helper.getWritableDatabase();
-        ArrayList<Connect> connectArrayList = new ArrayList<>();
-        String sql = "select * id "
-        return connectArrayList;
-    }
+
+
+//    public Connect search() {
+//        SQLiteDatabase db = helper.getWritableDatabase();
+//        ArrayList<Connect> connectArrayList = new ArrayList<>();
+//        String sql = "select * "
+//        return connectArrayList;
+//    }
 
 }

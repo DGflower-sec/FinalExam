@@ -11,6 +11,8 @@ public class Book implements Serializable {
     public String container;
     public String picture;
     public int price;
+    public String appraise;
+
 
 
 
